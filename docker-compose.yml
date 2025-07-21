@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    depends_on: [db, redis]
+  
+  db:
+    image: postgres:15
+    
+  redis:
+    image: redis:alpine
+    
+  celery:
+    build: .
+    depends_on: [db, redis]
+    command: celery -A config worker

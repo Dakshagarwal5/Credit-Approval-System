@@ -1,0 +1,12 @@
+# Analyze loan data
+loan_data = pd.read_excel('loan_data.xlsx')
+print("Loan Data Overview:")
+print("=" * 50)
+print(f"Total loans: {len(loan_data)}")
+print(f"Columns: {list(loan_data.columns)}")
+print("\nFirst 5 rows:")
+print(loan_data.head())
+print("\nData types:")
+print(loan_data.dtypes)
+print("\nBasic statistics:")
+print(loan_data[['Customer ID', 'Loan Amount', 'Tenure', 'Interest Rate', 'Monthly payment', 'EMIs paid on Time']].describe())
